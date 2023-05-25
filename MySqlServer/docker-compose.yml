@@ -1,0 +1,16 @@
+version: '3'
+services:
+  db:
+    image: mysql
+    container_name: MySql-Server-Practice
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./mycnf/my.cnf:/etc/mysql/conf.d/my.cnf
+    environment:
+      MYSQL_ROOT_PASSWORD: MySql_password
+      MYSQL_DATABASE: MysqlDB
+      MYSQL_USER: Ravindra
+      MYSQL_PASSWORD: Ravindra
+    ports:
+      - 4001:3306
+    restart: on-failure
